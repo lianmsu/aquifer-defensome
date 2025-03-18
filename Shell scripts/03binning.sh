@@ -7,8 +7,8 @@
 #SBATCH --ntasks-per-node=14
 #SBATCH --mail-type=end
 
-qc=/lustre/home/liutang_faculty/83LPW/02RDN/01QC
-zz=/lustre/home/liutang_faculty/83LPW/02RDN/02Assembly
+qc=./01QC
+zz=./02Assembly
 
 module load metaWRAP/1.2.2
 
