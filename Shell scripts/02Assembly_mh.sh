@@ -7,13 +7,13 @@
 #SBATCH --ntasks-per-node=14
 module load metaWRAP/1.2.2
 
-#for i in A814 B814 C814 L1-814 L2-814 L3-814 L4-814 L5-814
-for i in A403 A725 B403 B725 C403 C725
+
+for i in ${samples}
 do
 echo Running Sample ${i}
 start_time=$(date +%s)
 
-metawrap assembly -1 ../01QC/${i}/*_1.fastq.gz -2 ../01QC/${i}/*_2.fastq.gz  -o ${i}  -m 2100 -t $SLURM_NTASKS
+metawrap assembly -1 ../01QC/${i}/*_1.fastq.gz -2 ../01QC/${i}/*_2.fastq.gz  -o ${i}  -m 1000 -t $SLURM_NTASKS
 
 mv ${i}/final_assembly.fasta ${i}/contig_1kb_${i}.fa
 
